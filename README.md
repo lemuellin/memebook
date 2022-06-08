@@ -1,3 +1,4 @@
+# Instaclone
 # TECH:
 1. Tailwind  
 2. Prop-type
