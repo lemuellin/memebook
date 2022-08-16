@@ -1,19 +1,19 @@
 # Instaclone
 # TECH:
-1. Tailwind  
+1. Tailwind / materialUI / Bootstrap
 2. Prop-type
 3. styled-component
 4. Other Hooks: useCallback, useReducer, custom hooks
 5. Redux
-6. materialUI
+https://www.youtube.com/watch?v=CVpUuw9XSjY&list=WL&index=7&ab_channel=DevEd
 
-7. React folder hierachy, construction
 
 8. Typescript
 9. SASS
 
 # DESIGN:
 1. Dribble
+2. Framer Motion
 
 # FUNCTIONS:
 1. Comment
