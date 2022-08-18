@@ -1,33 +1,21 @@
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-// import { getAuth } from "firebase/auth";
-// import { getFirestore } from "firebase/firestore";
-// import { getStorage } from "firebase/storage";
+import { initializeApp } from "firebase/app";
 
-// Your web app's Firebase configuration
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
+  apiKey: "AIzaSyCoXa2IjdG9iPj9rc3hbd3JyBcOIf-27ks",
+  authDomain: "instaclone-development.firebaseapp.com",
+  projectId: "instaclone-development",
+  storageBucket: "instaclone-development.appspot.com",
+  messagingSenderId: "126856803443",
+  appId: "1:126856803443:web:41fe856585d4db370ee606",
 };
 
 // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-// export default app;
-// export const auth = getAuth();
-// export const db = getFirestore(app);
-// export const storage = getStorage(app);
-export function getFirebaseConfig() {
-  if (!firebaseConfig || !firebaseConfig.apiKey) {
-    throw new Error('No Firebase configuration object provided.' + '\n' +
-    'Add your web app\'s configuration object to firebase-config.js');
-  } else {
-    return config;
-  }
-}
+export const auth = getAuth();
+export const db = getFirestore(app);
+export const storage = getStorage(app);

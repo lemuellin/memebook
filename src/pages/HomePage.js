@@ -1,25 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from "../components/NavBar";
 import Post from "../components/Post";
 
-import img1 from '../assets/img1.jpg'
-import img2 from '../assets/img2.jpg'
+import getAllPosts from '../functions/getAllPosts';
 
 const HomePage = () => {
-    const [posts, setPosts] = useState([
-        {
-            username: "@bobaman",
-            caption: "Wow, Amazing!",
-            img: img1,
-            key: 1,
-        },
-        {
-            username: "@dimsumgurl",
-            caption: "I like food in general",
-            img: img2,
-            key: 2,
-        },
-    ]);
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        const updatePosts = async () => {
+            let postsList = await getAllPosts();
+            setPosts(postsList);
+        }
+        updatePosts();
+    },[]);
 
     return(
         <div>
