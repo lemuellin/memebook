@@ -41,3 +41,7 @@ https://www.youtube.com/watch?v=CVpUuw9XSjY&list=WL&index=7&ab_channel=DevEd
 6. search for user and hashtag Algolia Search
 7. tag other users in the post
 8. create groups
+
+Attribute:
+
+<a href='https://www.freepik.com/photos/retro-camera'>Retro camera photo created by Racool_studio - www.freepik.com</a>

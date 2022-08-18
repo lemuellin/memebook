@@ -9,7 +9,7 @@ export default function Signup() {
     <div>
         <Card>
             <Card.Body>
-                <h2 className="text-center mb-1">Monogram</h2>
+                {/* <h2 className="text-center mb-1">Monogram</h2> */}
                 <Form className="d-flex flex-column gap-2">
                     <Form.Group id="username">
                         <Form.Label>User Name</Form.Label>
@@ -20,15 +20,11 @@ export default function Signup() {
                         <Form.Control type="password" ref={passwordRef} required></Form.Control>
                     </Form.Group>
                     <Button className="w-100" type="submit">Log In</Button>
+                    <Button className="w-100" variant="success" type="button">Log In with Google</Button>
+                    <Button className="w-100" variant="info" type="submit">Just Visiting</Button>
                 </Form>
             </Card.Body>
         </Card>
-        <div className="w-100 text-center mt-2">
-            Log in with Google
-        </div>
-        <div className="w-100 text-center mt-2">
-            Just Visiting
-        </div>
     </div>
   )
 }

@@ -1,6 +1,10 @@
+import NavBar from "../components/NavBar";
+
 const UploadPage = () => {
     return(
-        <div>Upload</div>
+        <div>
+            <NavBar/>
+        </div>
     );
 };
 

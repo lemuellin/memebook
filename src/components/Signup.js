@@ -10,7 +10,7 @@ export default function Signup() {
     <div>
         <Card>
             <Card.Body>
-                <h2 className="text-center mb-1">Sign Up</h2>
+                {/* <h2 className="text-center mb-1">Sign Up</h2> */}
                 <Form className="d-flex flex-column gap-2">
                     <Form.Group id="username">
                         <Form.Label>User Name</Form.Label>
@@ -28,9 +28,6 @@ export default function Signup() {
                 </Form>
             </Card.Body>
         </Card>
-        <div className="w-100 text-center mt-2">
-            Already have an account? Log In.
-        </div>
     </div>
   )
 }
