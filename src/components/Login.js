@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, Button, Card } from "react-bootstrap";
 
 import { auth } from '../firebase-config';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const nav = useNavigate();
+
     const loginUser = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            console.log(userCredential.user)
+            console.log(userCredential.user);
+            nav('/home');
         })
         .catch((error) => {
             console.log(error.code);
@@ -33,6 +38,7 @@ const Login = () => {
             // The signed-in user info.
             const user = result.user;
             // ...
+            nav('/home');
           }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
@@ -42,7 +48,22 @@ const Login = () => {
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
             // ...
+            console.log('ERROR');
           });
+    }
+
+    const testAccount = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, 'testAccount@gmail.com', '123456')
+        .then((userCredential) => {
+            console.log(userCredential.user);
+            nav('/home');
+        })
+        .catch((error) => {
+            console.log(error.code);
+            console.log(error.message);
+        })
+        nav('/home');
     }
 
     return (
@@ -58,9 +79,9 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" onChange={(e) => setPassword(e.target.value)} required></Form.Control>
                         </Form.Group>
-                        <Button className="w-100" onClick={(e) => loginUser(e)} type="submit">Log In</Button>
-                        <Button className="w-100" variant="success" type="submit" onClick={(e) => googleLogIn(e)}>Log In with Google</Button>
-                        <Button className="w-100" variant="info" type="submit">Just Visiting</Button>
+                        <Button className="w-100" onClick={loginUser} type="submit">Log In</Button>
+                        <Button className="w-100" variant="success" type="submit" onClick={googleLogIn}>Log In with Google</Button>
+                        <Button className="w-100" variant="info" type="button" onClick={testAccount}>Just Visiting</Button>
                     </Form>
                 </Card.Body>
             </Card>
