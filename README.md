@@ -1,3 +1,22 @@
+TODO:
+1. Upload:
+	image resizing on upload
+	image type: jpg, png...
+	post a photo with ability to crop :React Easy Crop
+
+2. Comments: timestamp, username, delete
+
+3. Posts: Like the post, delete
+
+4. Profile:
+	show their own posts
+	customize profile name/ photo/ password/ description
+
+
+
+
+
+
 # Instaclone
 # TECH:
 1. Tailwind / materialUI / Bootstrap

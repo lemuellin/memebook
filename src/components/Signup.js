@@ -19,12 +19,13 @@ const Signup = () => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => 
-            console.log(userCredential.user),
+            // console.log(userCredential.user),
             nav('/home')
         )
         .catch((error) => {
-            console.log(error.code);
-            console.log(error.message);
+            // console.log(error.code);
+            // console.log(error.message);
+            alert(error.code);
         })
     };
 
@@ -54,7 +55,7 @@ const Signup = () => {
                             <Form.Label>Password Confirmation</Form.Label>
                             <Form.Control type="password" onChange={(e) => setPasswordConfirm(e.target.value)} onKeyUp={(e) => validatePwd(e)} id='pwdConfirm' required></Form.Control>
                         </Form.Group>
-                        <Button className="w-100" type="submit" onClick={signUpUser}>Sign Up</Button>
+                        <Button className="w-100" type="submit" onClick={signUpUser} disabled={!email || !password || (password !== passwordConfirm)}>Sign Up</Button>
                     </Form>
                 </Card.Body>
             </Card>

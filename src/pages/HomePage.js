@@ -5,7 +5,7 @@ import Post from "../components/Post";
 import getAllPosts from '../functions/getAllPosts';
 
 import { auth } from '../firebase-config';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, getAuth } from 'firebase/auth';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -26,13 +26,15 @@ const HomePage = () => {
               // User is signed in, see docs for a list of available properties
               // https://firebase.google.com/docs/reference/js/firebase.User
               const uid = user.uid;
-              console.log(user);
-              console.log(uid);
+              // console.log(user);
+              // console.log(uid);
+              // console.log(getAuth());
+              // console.log(getAuth().currentUser);
               // ...
             } else {
               // User is signed out
               // ...
-              console.log("INVALID SIGN OUT");
+            //   console.log("INVALID SIGN OUT");
               nav('/login');
             }
           });

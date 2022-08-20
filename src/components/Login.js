@@ -17,12 +17,13 @@ const Login = () => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            console.log(userCredential.user);
+            // console.log(userCredential.user);
             nav('/home');
         })
         .catch((error) => {
-            console.log(error.code);
-            console.log(error.message);
+            // console.log(error.code);
+            // console.log(error.message);
+            alert(error.code);
         })
     }
 
@@ -48,7 +49,8 @@ const Login = () => {
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
             // ...
-            console.log('ERROR');
+            // console.log('ERROR');
+            alert(error.code);
           });
     }
 
@@ -56,12 +58,13 @@ const Login = () => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, 'testAccount@gmail.com', '123456')
         .then((userCredential) => {
-            console.log(userCredential.user);
+            // console.log(userCredential.user);
             nav('/home');
         })
         .catch((error) => {
-            console.log(error.code);
-            console.log(error.message);
+            // console.log(error.code);
+            // console.log(error.message);
+            alert(error.code);
         })
         nav('/home');
     }
@@ -79,7 +82,7 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" onChange={(e) => setPassword(e.target.value)} required></Form.Control>
                         </Form.Group>
-                        <Button className="w-100" onClick={loginUser} type="submit">Log In</Button>
+                        <Button className="w-100" onClick={loginUser} type="submit" disabled={!email && !password}>Log In</Button>
                         <Button className="w-100" variant="success" type="submit" onClick={googleLogIn}>Log In with Google</Button>
                         <Button className="w-100" variant="info" type="button" onClick={testAccount}>Just Visiting</Button>
                     </Form>
