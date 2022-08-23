@@ -1,10 +1,5 @@
 TODO:
-1. Upload:
-	image resizing on upload
-	image type: jpg, png...
-	post a photo with ability to crop :React Easy Crop
-
-2. Comments: timestamp, username, delete
+2. Comments: timestamp, username, delete (only appears for comment poster)
 
 3. Posts: Like the post, delete
 
