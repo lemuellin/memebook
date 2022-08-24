@@ -1,14 +1,11 @@
 TODO:
+1. Posts: Like the post
+
 2. Comments: timestamp, username, delete (only appears for comment poster)
 
-3. Posts: Like the post, delete
-
-4. Profile:
+3. Profile Page:
 	show their own posts
 	customize profile name/ photo/ password/ description
-
-
-
 
 
 
