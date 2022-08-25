@@ -20,18 +20,16 @@ const HomePage = () => {
     }
 
     const nav = useNavigate();
-    let currUser;
+    let currUserEmail;
 
-    useEffect(() => {
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          console.log(user.email);
-          currUser = user.email;
-        }else{
-          nav('/login');
-        }
-      });
-    },[]);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        currUserEmail = user.email;
+      }else{
+        nav('/login');
+      }
+    });
+    
 
     useEffect(() => {
       const postsRef = collection(db, 'posts');
@@ -50,10 +48,30 @@ const HomePage = () => {
           try {
             timestamp = new Date(post.data().timestamp.seconds * 1000 + post.data().timestamp.nanoseconds/1000000).toLocaleDateString();
           } catch (error){
-            console.log('error to display date');
+            
           }
 
-          postsList.push({username: username, caption: caption, timestamp: timestamp, imgURL: imgURL, userEmail: userEmail, currUser: currUser, postID: postID});
+          let isCurrentUserPoster = false;        
+          if (userEmail === currUserEmail){
+            isCurrentUserPoster = true;
+          }
+          
+          let likeCount = post.data().likeCount.length;
+
+          let commentArray = post.data().comments;
+
+          postsList.push({
+            username: username, 
+            caption: caption, 
+            timestamp: timestamp, 
+            imgURL: imgURL, 
+            isCurrentUserPoster: isCurrentUserPoster, 
+            postID: postID,
+            likeCount: likeCount,
+            userEmail: userEmail,
+            currUserEmail: currUserEmail,
+            comments: commentArray,
+          });
         })
         setPosts(postsList);
       });

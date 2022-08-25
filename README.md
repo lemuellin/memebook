@@ -1,12 +1,9 @@
 TODO:
-1. Posts: Like the post
-
-2. Comments: timestamp, username, delete (only appears for comment poster)
-
-3. Profile Page:
+1. Profile Page:
 	show their own posts
 	customize profile name/ photo/ password/ description
 
+** SVG icons need to center by adjusting viewbox, switch to PNG icons **
 
 
 # Instaclone

@@ -43,6 +43,8 @@ const UploadModal = (props) => {
             username: getAuth().currentUser.email,
             caption: captionRef.current.value,
             timestamp: serverTimestamp(),
+            likeCount: [],
+            comments: [],
         });
         // console.log('new doc added to firebase with ID:', docRef.id);
 
@@ -70,8 +72,8 @@ const UploadModal = (props) => {
 
     }
 
-    const closeModalAndUpload = async () => {
-        await uploadPost();
+    const closeModalAndUpload = () => {
+        uploadPost();
         props.handleClose();
         props.updateStatus();
     }
@@ -102,7 +104,7 @@ const UploadModal = (props) => {
             </Modal.Header>
             
             <Modal.Body>
-                <input className="w-100" type="text" ref={captionRef} placeholder="Please enter a caption..."/>    
+                <input className="w-100" type="text" maxLength="100" ref={captionRef} placeholder="Please enter a caption..."/>    
             </Modal.Body>
             
             <Modal.Footer>
