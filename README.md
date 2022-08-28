@@ -1,11 +1,7 @@
 TODO:
 1. Profile Page:
-
-	try to set the image as background image
-
-	show their own posts
 	customize profile name/ photo/ password/ description
-	update automatically when user upload post from profile page
+	display likes and comments when pointer hover on image
 
 ** SVG icons need to center by adjusting viewbox, switch to PNG icons **
 
