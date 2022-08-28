@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/instaclone/static/css/main.27c48ee3.css",
+    "main.js": "/instaclone/static/js/main.56cfe4e0.js",
+    "static/media/camera.jpg": "/instaclone/static/media/camera.7df3dbbca6fea0715273.jpg",
+    "index.html": "/instaclone/index.html",
+    "main.27c48ee3.css.map": "/instaclone/static/css/main.27c48ee3.css.map",
+    "main.56cfe4e0.js.map": "/instaclone/static/js/main.56cfe4e0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.27c48ee3.css",
+    "static/js/main.56cfe4e0.js"
+  ]
+}
