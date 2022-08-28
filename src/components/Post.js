@@ -2,7 +2,7 @@ import React from 'react'
 import uniqid from "uniqid";
 
 import { db, storage } from '../firebase-config';
-import { doc, deleteDoc, getDoc, setDoc, addDoc, updateDoc, arrayUnion, arrayRemove, serverTimestamp } from "firebase/firestore";
+import { doc, deleteDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 import { ref, deleteObject } from "firebase/storage";
 
 

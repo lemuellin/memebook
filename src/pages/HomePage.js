@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from "../components/NavBar";
 import Post from "../components/Post";
+import Profile from '../components/Profile';
 
 import { db } from "../firebase-config";
 import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
@@ -13,11 +14,7 @@ import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
 
     const [posts, setPosts] = useState([]);
-
-    const [update, setUpdate] = useState();
-    const updateStatus = () => {
-      setUpdate(1);
-    }
+    const [profileClicked, setProfileClicked] = useState(false);
 
     const nav = useNavigate();
     let currUserEmail;
@@ -29,7 +26,6 @@ const HomePage = () => {
         nav('/login');
       }
     });
-    
 
     useEffect(() => {
       const postsRef = collection(db, 'posts');
@@ -76,14 +72,17 @@ const HomePage = () => {
         setPosts(postsList);
       });
       
-    },[update]);
+    },[]);
 
     return(
         <div>
-            <NavBar updateStatus={updateStatus}/>
-            <div className="d-flex flex-column align-items-center justify-content-center mt-4 gap-4">
+            <NavBar clickProfile={() => setProfileClicked(true)} clickHome={() => setProfileClicked(false)}/>
+            { profileClicked ? 
+              <Profile data={posts}/> : 
+              <div id="timeline" className="d-flex flex-column align-items-center justify-content-center mt-4 gap-4">
                 {posts.map((post)=>Post(post))}
-            </div>
+              </div>  
+            }
         </div>
     );
 };

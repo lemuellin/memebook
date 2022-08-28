@@ -75,7 +75,6 @@ const UploadModal = (props) => {
     const closeModalAndUpload = () => {
         uploadPost();
         props.handleClose();
-        props.updateStatus();
     }
 
     return(
